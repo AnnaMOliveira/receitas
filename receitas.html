@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+
+    <title>Receitas</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <form action="#" onsubmit="onSubmitForm(event)">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Receitas</h1>
+                    </div>
+                    <nav>
+                        <ul>
+                          <li><a href="#">Página Inicial</a></li>
+                          <li><a href="#">Frutas</a></li>
+                          <li><a href="#">Legumes</a></li>
+                          <li><a href="receitas.html">Receitas</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <main>
+                    <section class="detalhes-receita">
+                        <h2>Pudim de Banana d'água</h2>
+                        <div class="receita-info">
+                            <div class="receita-img">
+                                <img src="img/receita1.jpg" alt="Nome da Receita">
+                            </div>
+                        </div>
+                        <div class="receita-ingredientes">
+                            <h3>Ingredientes:</h3>
+                            <ul>
+                                <li>3 ovos</li>
+                                <li>1 lata de leite moça</li>
+                                <li>1 colher de canela em pó</li>
+                                <li>3 bananas</li>
+                                <li>Leite</li>
+                                <li>E açúcar</li>
+                            </ul>
+                        </div>
+                        <div class="receita-instrucoes">
+                            <h3>Modo de Preparo:</h3>
+                            <ol>
+                                <li>Bater bem as claras até ficarem em neve</li>
+                                <li>Depois bater tudo no liquidificador: claras, gemas, bananas, leite e a mesma medida da lata de leite, canela</li>
+                                <li>Faça a calda com duas xícaras de açúcar e uma de água</li>
+                                <li>Depois de esfriar, coloque na forma e depois o pudim</li>
+                                <li>Leve para o forno</li>
+                            </ol>
+                        </div>
+                    </section>
+                    <section class="detalhes-receita">
+                        <h2>Torta Cremosa de Cebola</h2>
+                        <div class="receita-info">
+                            <div class="receita-img">
+                                <img src="img/receita2.jpg" alt="Nome da Receita">
+                            </div>
+                        </div>
+                        <div class="receita-ingredientes">
+                            <h3>Ingredientes:</h3>
+                            <ul>
+                                <p>Massa</p>
+                                <li>1 e 1/2 xíc. de farinha de trigo</li>
+                                <li>100g de manteiga gelada</li>
+                                <li>1 c. de chá de sal</li>
+                                <p>Recheio</p>
+                                <li>fio de azeite</li>
+                                <li>3 cebolas grandes</li>
+                                <li>sal</li>
+                                <li>pimenta-do-reino</li>
+                                <li>1 cx de creme de leite</li>
+                                <li>1/2 copo de creme de ricota ou requeijão</li>
+                                <li>100g de muçarela ralada</li>
+                                <li>cheiro verde</li>
+                                <li>parmesão ralado</li>
+                            </ul>
+                        </div>
+                        <div class="receita-instrucoes">
+                            <h3>Modo de Preparo:</h3>
+                            <p>Massa</p>
+                            <ol>
+                                <li>Misture todos os ingredientes com as mãos.</li>
+                                <li>Se necessário, adicione um pingo de água para dar liga.</li>
+                                <li>Coloque a massa em uma forma de fundo removível e pressione com as mãos no fundo e nas laterais.</li>
+                            </ol>
+                            <p>Recheio</p>
+                            <ol>
+                                <li>Em uma panela, coloque o fio de azeite e refogue as cebolas até ficarem translúcidas.</li>
+                                <li>Tempere com sal e pimenta-do-reino.</li>
+                                <li>Acrescente o creme de leite, creme de ricota, muçarela e cheiro verde.</li>
+                                <li>Coloque o recheio sobre a massa, polvilhe parmesão e leve ao forno preaquecido a 180ºC por 25 minutos ou até dourar.</li>
+                            </ol>
+                        </div>
+                    </section>
+                </main>
+                <footer>
+                    <p>Se as receitas não ficarem boas, não é responsabilidade dos desenvolvedores.</p>
+                </footer>
+                <div class="g-recaptcha" data-sitekey="87c66ebd-a3dc-4a20-9a9d-7385af449858"></div>
+                <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        function onSubmitForm(event) {
+            event.preventDefault();
+
+            // Verificar se o reCAPTCHA foi preenchido
+            var response = grecaptcha.getResponse();
+            if (response.length === 0) {
+                alert("Por favor, preencha o reCAPTCHA.");
+                return;
+            }
+
+            // Preencher o valor da resposta do reCAPTCHA no campo oculto
+            document.getElementById("g-recaptcha-response").value = response;
+
+            // Enviar o formulário
+            event.target.submit();
+        }
+    </script>
+</body>
+</html>
